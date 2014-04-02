@@ -1,1 +1,2 @@
-A docker image with prebuilt upstream gstreamer on latest ubuntu release
+A docker image based on latest ubuntu release with prebuilt upstream version of
+gstreamer

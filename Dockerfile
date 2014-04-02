@@ -3,18 +3,9 @@ FROM ubuntu:latest
 # install required packages
 RUN apt-get update
 RUN apt-get -y install python-software-properties apt-utils vim htop dpkg-dev \
-  openssh-server git-core wget software-properties-common \
-  faac ffmpeg-real libmp3lame0 libavcodec-extra-53 \
-  gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
-  gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav \
-  gstreamer1.0-tools gir1.2-gstreamer-1.0 gir1.2-gst-plugins-base-1.0 \
-  rtmpdump librtmp-dev librtmp0 \
-  autotools-dev debhelper dpkg-dev libexpat-dev libgd2-dev libgd2-noxpm-dev \
-  libgd2-xpm-dev libgeoip-dev liblua5.1-dev libmhash-dev libpam0g-dev \
-  libpcre3-dev libperl-dev libssl-dev libxslt1-dev po-debconf zlib1g-dev \
-  python-virtualenv \
-  nodejs npm \
-  yasm
+  openssh-server git-core wget software-properties-common
+RUN apt-add-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) multiverse"
+RUN apt-get update
 
 # create the ubuntu user
 RUN addgroup --system ubuntu
