@@ -7,6 +7,8 @@ RUN apt-get -y install python-software-properties apt-utils vim htop dpkg-dev \
 RUN apt-add-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) multiverse"
 RUN apt-get update
 
+RUN apt-get install -y faac
+
 # create the ubuntu user
 RUN addgroup --system ubuntu
 RUN adduser --system --shell /bin/bash --gecos 'ubuntu' \
